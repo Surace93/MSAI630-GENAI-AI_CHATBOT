@@ -1,0 +1,28 @@
+# Python cache files
+__pycache__/
+*.pyc
+
+# Virtual environment
+env/
+.venv/
+
+# Package artifacts
+dist/
+build/
+*.egg-info/
+.gradio/cached_examples/
+
+# Python virtual environment
+venv/
+
+# Byte-compiled / cache files
+__pycache__/
+*.pyc
+*.pyo
+
+# Environment variables
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
