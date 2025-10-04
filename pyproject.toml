@@ -1,0 +1,40 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "langchain-gradio"
+version = "0.0.5"
+description = "A Python package for creating Gradio applications with LangChain"
+authors = [
+    { name = "AK", email = "ahsen.khaliq@gmail.com" }
+]
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "gradio>=5.0.2",
+    "langchain",
+    "langchain-openai",
+    "langchain-anthropic",
+    "langchain-google-genai",
+    "langchain-huggingface",
+]
+
+[project.urls]
+homepage = "https://github.com/AK391/langchain-gradio"
+repository = "https://github.com/AK391/langchain-gradio"
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["langchain_gradio"]
+
+
+
+
