@@ -1,12 +1,19 @@
 import os
 import gradio as gr
 from google import genai
+from dotenv import load_dotenv 
 
-# Load API key from environment
-os.environ["GOOGLE_API_KEY"] = "AIzaSyABUfFPiweyLapXiMgz_tZ3p5XJsi0VQQg"
+# Load environment variables from .env file (only works locally)
+load_dotenv()
+
+# Get API key from environment (works both locally and on Vercel)
+api_key = os.getenv("GEMINI_API_KEY")
+
+if not api_key:
+    raise ValueError("❌ GEMINI_API_KEY not found. Set it in .env or Vercel environment variables.")
 
 # Initialize Gemini client
-client = genai.Client(api_key=os.environ["GOOGLE_API_KEY"])
+client = genai.Client(api_key=api_key)
 
 # Chat function with history
 def chat_with_gemini(user_message, chat_history):
